@@ -61,14 +61,17 @@ EXTRACT (
 ) = 1999;
 -- comparatie
 AND ist.data_sfarsit <= TO_DATE('1999-12-31', 'YYYY-MM-DD');
+
 -- arbore
 -- daca are subordonati
-SELECT LEVEL;
+SELECT LEVEL
 CONNECT BY PRIOR a.id_angajat = a.id_manager START WITH a.id_angajat = 100;
 -- leaf
 SELECT CONNECT_BY_ISLEAF,
   LEVEL;
 CONNECT BY PRIOR a.id_angajat = a.id_manager START WITH a.id_angajat = 100;
+
+
 --    stergere definitiva
 DROP TABLE nume_tabela PURGE;
 -- virtual table
@@ -76,3 +79,11 @@ CREATE OR REPLACE VIEW v_rand_comenzi AS
 SELECT;
 -- index
 CREATE INDEX idx _nume ON angajati(prenume);
+
+CREATE SYNONYM listings_table FOR listings;
+
+CREATE SEQUENCE booking_sequence
+START WITH 1
+INCREMENT BY 1
+NOCACHE
+NOCYCLE;

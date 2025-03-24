@@ -64,7 +64,8 @@ SELECT a.nume,
   LEVEL
 FROM angajati a,
   departamente d
-WHERE a.id_departament = d.id_departament CONNECT BY PRIOR a.id_angajat = a.id_manager START WITH a.id_angajat = 100
+WHERE a.id_departament = d.id_departament 
+CONNECT BY PRIOR a.id_angajat = a.id_manager START WITH a.id_angajat = 100
 ORDER BY LEVEL;
 -- 
 -- 5) Sa se afiseze numele angajatilor care nu au subalterni si care au aceeasi functie ca angajatul Rogers, nivelul ierarhic si denumirea departamentului unde acestia lucreaza
