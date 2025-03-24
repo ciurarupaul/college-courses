@@ -53,7 +53,7 @@
       <DependentUpon>CarListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\FakeDatabase.cs" />
-    <Compile Include="Entities\Class1.cs" />
+    <Compile Include="Entities\Car.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CarListForm.resx">
