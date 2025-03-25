@@ -45,8 +45,5 @@ namespace CarRentalApp
             column.Visible = isVisible;
             carsDataGridView.Columns.Add(column);
         }
-
-
-
     }
 }
